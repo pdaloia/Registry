@@ -1,0 +1,97 @@
+  ok
+->put(0,"Joe",[15, 2, 1990])
+  id must be positive
+->put(1,"",[15, 2, 1990])
+  name must start with A-Z or a-z
+->put(1," ",[15, 2, 1990])
+  name must start with A-Z or a-z
+->put(1,"J",[15, 2, 1990])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+->put(1,"Joe",[15, 2, 1990])
+  id already taken
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+->put(2,"Joe",[15, 2, 1990])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+->put(3,"Pam",[31, 3, 1991])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(6,"Joe",[15, 2, 1987])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(5,"Joe",[15, 2, 1989])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(4,"Joe",[15, 2, 1970])
+  ok
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(6,"Pam Oakley",[15, 2, 1970])
+  id already taken
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(7,"Pam Oakley",[29, 2, 1970])
+  not a valid date in 1900..3000
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(7,"Pam Oakley",[31, 4, 1984])
+  not a valid date in 1900..3000
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(7,"Barbara Oakley",[30, 4, 1984])
+  ok
+  Barbara Oakley; ID: 7; Born: 1984-04-30; Citizen: Canada; Single
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(8,"Eve",[30, 4, 1984])
+  ok
+  Barbara Oakley; ID: 7; Born: 1984-04-30; Citizen: Canada; Single
+  Eve; ID: 8; Born: 1984-04-30; Citizen: Canada; Single
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+->put(9,"Steven Spielberg",[17, 5, 3000])
+  ok
+  Barbara Oakley; ID: 7; Born: 1984-04-30; Citizen: Canada; Single
+  Eve; ID: 8; Born: 1984-04-30; Citizen: Canada; Single
+  J; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 2; Born: 1990-02-15; Citizen: Canada; Single
+  Joe; ID: 4; Born: 1970-02-15; Citizen: Canada; Single
+  Joe; ID: 5; Born: 1989-02-15; Citizen: Canada; Single
+  Joe; ID: 6; Born: 1987-02-15; Citizen: Canada; Single
+  Pam; ID: 3; Born: 1991-03-31; Citizen: Canada; Single
+  Steven Spielberg; ID: 9; Born: 3000-05-17; Citizen: Canada; Single

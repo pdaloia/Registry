@@ -1,0 +1,29 @@
+-- abstract user interface for a population registry
+system registry
+
+-- specify date
+type DAY = 1..31
+type MONTH = 1..12
+type YEAR = 1900..3000
+type DATE = TUPLE[d:DAY;m:MONTH;y:YEAR]
+
+-- specify indentifiers
+type ID = INTEGER
+type NAME = STRING
+type COUNTRY = STRING
+
+put(id: ID; name1: NAME; dob: DATE)
+  -- citizen id, name1, date of birth
+
+put_alien(id: ID; name1: NAME; dob: DATE; country: COUNTRY)
+  -- alien id, name, date of birth, country of citizenship
+
+marry(id1: ID; id2: ID; date: DATE)
+   -- register marriage of person id1 to id2 on given date
+
+divorce(a_id1:ID; a_id2:ID)
+
+die(id:ID)
+  -- death of person id
+
+

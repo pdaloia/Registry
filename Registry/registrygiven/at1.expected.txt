@@ -1,0 +1,97 @@
+  ok
+->put(1,"Joe",[15, 2, 1990])
+  ok
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+->put(2,"Pam",[31, 3, 1991])
+  ok
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Single
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Single
+->marry(1,2,[8, 12, 2010])
+  ok
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->put_alien(3,"Bob",[17, 2, 1995],"England")
+  ok
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->put_alien(4,"Kim",[31, 3, 1991],"France")
+  ok
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Single
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->marry(3,4,[5, 7, 2011])
+  proposed marriage invalid
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Single
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->divorce(3,4)
+  these are not married
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Single
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->die(4)
+  ok
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Spouse: Pam,2,[2010-12-08]
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Joe,1,[2010-12-08]
+->die(1)
+  ok
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Single
+->marry(3,4,[25, 6, 2012])
+  proposed marriage invalid
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Single
+->marry(3,2,[25, 6, 2014])
+  ok
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+->marry(1,4,[4, 11, 2013])
+  proposed marriage invalid
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+->put(5,"Ada",[7, 7, 1979])
+  ok
+  Ada; ID: 5; Born: 1979-07-07; Citizen: Canada; Single
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+->put(6,"Gus",[6, 5, 1980])
+  ok
+  Ada; ID: 5; Born: 1979-07-07; Citizen: Canada; Single
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Gus; ID: 6; Born: 1980-05-06; Citizen: Canada; Single
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+->marry(6,5,[6, 5, 1998])
+  ok
+  Ada; ID: 5; Born: 1979-07-07; Citizen: Canada; Spouse: Gus,6,[1998-05-06]
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Gus; ID: 6; Born: 1980-05-06; Citizen: Canada; Spouse: Ada,5,[1998-05-06]
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+->put(7,"Zurphy, Rex",[1, 2, 1900])
+  ok
+  Ada; ID: 5; Born: 1979-07-07; Citizen: Canada; Spouse: Gus,6,[1998-05-06]
+  Bob; ID: 3; Born: 1995-02-17; Citizen: England; Spouse: Pam,2,[2014-06-25]
+  Gus; ID: 6; Born: 1980-05-06; Citizen: Canada; Spouse: Ada,5,[1998-05-06]
+  Joe; ID: 1; Born: 1990-02-15; Citizen: Canada; Deceased
+  Kim; ID: 4; Born: 1991-03-31; Citizen: France; Deceased
+  Pam; ID: 2; Born: 1991-03-31; Citizen: Canada; Spouse: Bob,3,[2014-06-25]
+  Zurphy, Rex; ID: 7; Born: 1900-02-01; Citizen: Canada; Single
